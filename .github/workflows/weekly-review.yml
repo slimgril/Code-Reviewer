@@ -13,10 +13,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Load secrets from 1Password
+        uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          ANTHROPIC_API_KEY: op://Code-Reviewer/Claude API/api_key
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
 
       - name: Run weekly review
         run: python scripts/review.py "weekly scheduled review"

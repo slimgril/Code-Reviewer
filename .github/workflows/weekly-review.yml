@@ -19,6 +19,9 @@ jobs:
           python-version: '3.11'
 
       - name: Run weekly review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY_BACKUP: ${{ secrets.ANTHROPIC_API_KEY_BACKUP }}
         run: python scripts/review.py "weekly scheduled review"
 
       - name: Commit and push changes

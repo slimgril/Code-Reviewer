@@ -1,0 +1,10 @@
+{
+  "primary": {
+    "base_url": "https://api.anthropic.com",
+    "key_env": "ANTHROPIC_API_KEY"
+  },
+  "backup": {
+    "base_url": "https://api123.top",
+    "key_env": "ANTHROPIC_API_KEY_BACKUP"
+  }
+}

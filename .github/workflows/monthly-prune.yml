@@ -19,6 +19,9 @@ jobs:
           python-version: '3.11'
 
       - name: Run prune
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY_BACKUP: ${{ secrets.ANTHROPIC_API_KEY_BACKUP }}
         run: python scripts/prune.py
 
       - name: Commit and push changes

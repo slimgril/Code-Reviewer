@@ -16,6 +16,7 @@
 | File | Description |
 |------|-------------|
 | [`prompts/gemini-notebooks-10-prompts.md`](prompts/gemini-notebooks-10-prompts.md) | 10 Gemini Notebooks prompt templates (整理、拆解、生成、文案、講稿、簡報、分析、比較、靈感、優化) |
+| [`prompts/17-universal-prompts.md`](prompts/17-universal-prompts.md) | 17 組萬用提示詞（寫作 5、研究 4、溝通 4、時間管理 4），適用 Claude、ChatGPT、Gemini |
 
 ## No Always On Required
 

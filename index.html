@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pulse — 簡潔的碼表與倒數計時器演示">
+  <meta name="theme-color" content="#1a3a3a">
+  <title>Pulse · 計時器演示</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <p class="brand">Pulse</p>
+  </header>
+
+  <main class="timer-stage">
+    <h1 class="visually-hidden">Pulse 計時器演示</h1>
+    <p class="tagline">專注當下，一秒不漏</p>
+
+    <div class="mode-switch" role="tablist" aria-label="計時模式">
+      <button type="button" class="mode-btn is-active" role="tab" aria-selected="true" data-mode="stopwatch">碼表</button>
+      <button type="button" class="mode-btn" role="tab" aria-selected="false" data-mode="countdown">倒數</button>
+    </div>
+
+    <section class="display-wrap" aria-labelledby="time-display">
+      <svg class="ring" viewBox="0 0 240 240" aria-hidden="true">
+        <circle class="ring-track" cx="120" cy="120" r="108"></circle>
+        <circle class="ring-progress" cx="120" cy="120" r="108"></circle>
+      </svg>
+      <time id="time-display" class="time-display" datetime="PT0S">00:00.00</time>
+    </section>
+
+    <div class="presets" id="presets" hidden>
+      <button type="button" class="preset-btn" data-seconds="60">1 分</button>
+      <button type="button" class="preset-btn" data-seconds="300">5 分</button>
+      <button type="button" class="preset-btn" data-seconds="600">10 分</button>
+      <button type="button" class="preset-btn" data-seconds="1500">25 分</button>
+    </div>
+
+    <div class="controls">
+      <button type="button" class="ctrl-btn ctrl-primary" id="btn-toggle" aria-label="開始">開始</button>
+      <button type="button" class="ctrl-btn ctrl-secondary" id="btn-reset" aria-label="重置">重置</button>
+    </div>
+
+    <p class="hint">空白鍵開始／暫停 · R 重置</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>計時器演示 · 純前端實作</p>
+  </footer>
+
+  <script src="js/timer.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="分秒 — 簡潔優雅的碼表與倒數計時器">
+  <meta name="theme-color" content="#1A4D45">
+  <title>分秒 — 計時器</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere__glow atmosphere__glow--left"></div>
+    <div class="atmosphere__glow atmosphere__glow--right"></div>
+    <div class="atmosphere__grain"></div>
+  </div>
+
+  <header class="site-header">
+    <p class="brand">分秒</p>
+  </header>
+
+  <main class="timer-stage">
+    <nav class="mode-switch" role="tablist" aria-label="計時模式">
+      <button type="button" class="mode-switch__btn is-active" role="tab" aria-selected="true" data-mode="stopwatch">碼表</button>
+      <button type="button" class="mode-switch__btn" role="tab" aria-selected="false" data-mode="countdown">倒數</button>
+    </nav>
+
+    <section class="timer-face" aria-label="計時顯示">
+      <div class="ring" data-progress="0">
+        <svg class="ring__svg" viewBox="0 0 280 280" aria-hidden="true">
+          <circle class="ring__track" cx="140" cy="140" r="126"></circle>
+          <circle class="ring__progress" cx="140" cy="140" r="126"></circle>
+        </svg>
+        <div class="timer-face__core">
+          <p class="timer-face__label" id="timer-label">碼表</p>
+          <p class="timer-face__display" id="timer-display" aria-live="polite">00:00.00</p>
+          <p class="timer-face__status" id="timer-status">準備開始</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown-setup" id="countdown-setup" hidden>
+      <label class="setup-field">
+        <span class="setup-field__label">分</span>
+        <input type="number" id="input-minutes" min="0" max="99" value="5" inputmode="numeric">
+      </label>
+      <span class="setup-field__sep" aria-hidden="true">:</span>
+      <label class="setup-field">
+        <span class="setup-field__label">秒</span>
+        <input type="number" id="input-seconds" min="0" max="59" value="0" inputmode="numeric">
+      </label>
+    </section>
+
+    <div class="controls" role="group" aria-label="計時控制">
+      <button type="button" class="btn btn--ghost" id="btn-reset" disabled>重置</button>
+      <button type="button" class="btn btn--primary" id="btn-toggle">開始</button>
+      <button type="button" class="btn btn--ghost" id="btn-lap" disabled>分段</button>
+    </div>
+
+    <section class="laps" id="laps-section" hidden>
+      <h2 class="laps__title">分段紀錄</h2>
+      <ol class="laps__list" id="laps-list"></ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>專注此刻，一分一秒</p>
+  </footer>
+
+  <script src="js/timer.js"></script>
+</body>
+</html>

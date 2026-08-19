@@ -1,0 +1,47 @@
+name: Deploy Surge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'css/**'
+      - 'js/**'
+      - 'assets/**'
+      - 'img/**'
+      - 'CNAME'
+      - '.surgeignore'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/deploy-surge.sh'
+      - '.github/workflows/deploy-surge.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check SURGE_TOKEN
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          if [ -z "$SURGE_TOKEN" ]; then
+            echo "::error::SURGE_TOKEN secret is missing. Create it in repo Settings → Secrets → Actions after running \`surge token\` locally."
+            exit 1
+          fi
+
+      - name: Deploy to Surge
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+        run: npm run deploy

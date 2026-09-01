@@ -5,58 +5,6 @@
 (empty, ready for entries)
 
 ---
-## Review: 2026-06-03 21:20:35
-
-**Task:** weekly scheduled review
-
-**Problems encountered:** (none recorded)
-
-**Inefficiencies:** (none recorded)
-
-**Lessons learned:** (none recorded)
-
-**Changes applied:** (none recorded)
-
----
-## Review: 2026-06-10 20:36:20
-
-**Task:** weekly scheduled review
-
-**Problems encountered:** (none recorded)
-
-**Inefficiencies:** (none recorded)
-
-**Lessons learned:** (none recorded)
-
-**Changes applied:** (none recorded)
-
----
-## Review: 2026-06-17 20:19:57
-
-**Task:** weekly scheduled review
-
-**Problems encountered:** (none recorded)
-
-**Inefficiencies:** (none recorded)
-
-**Lessons learned:** (none recorded)
-
-**Changes applied:** (none recorded)
-
----
-## Review: 2026-06-24 19:51:57
-
-**Task:** weekly scheduled review
-
-**Problems encountered:** (none recorded)
-
-**Inefficiencies:** (none recorded)
-
-**Lessons learned:** (none recorded)
-
-**Changes applied:** (none recorded)
-
----
 ## Review: 2026-07-01 20:01:45
 
 **Task:** weekly scheduled review

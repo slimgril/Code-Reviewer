@@ -1,0 +1,13 @@
+{
+  "name": "pulse-timer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pulse timer demo — static site deployed via Surge",
+  "scripts": {
+    "deploy": "bash scripts/deploy-surge.sh",
+    "deploy:surge": "bash scripts/deploy-surge.sh"
+  },
+  "devDependencies": {
+    "surge": "^0.40.2"
+  }
+}

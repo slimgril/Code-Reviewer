@@ -1,0 +1,12 @@
+.git
+.github
+node_modules
+scripts
+package.json
+package-lock.json
+AGENT_NOTES.md
+.replit-agent-rules.md
+README.md
+.gitignore
+.surgeignore
+*.md
